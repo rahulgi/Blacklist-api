@@ -6,3 +6,6 @@ gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
+
+# Heroku analytics addon
+gem 'newrelic_rpm'
