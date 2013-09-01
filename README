@@ -1,0 +1,36 @@
+----
+http://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/
+++++
+Tutorial regarding how to create an application using sinatra and postgres
+
+----
+http://stackoverflow.com/questions/7975556/how-to-start-postgresql-server-on-mac-os-x
+++++
+how to start postgres server
+  (information can also be obtained using `brew info postgres`
+  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+how to stop postgres server
+  pg_ctl -D /usr/lcoal/var/postgres stop -s -m fast
+how to get status of server
+  pg_ctl -D /usr/local/var/postgres status
+get listen addresses
+  egrep 'listen|port' /usr/local/var/postgres/postgresql.conf
+
+----
+http://alvinalexander.com/blog/post/postgresql/how-start-postgres-postgresql-server-mac-osx
+++++
+to create a database
+  createdb [database-name]
+
+----
+http://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database
+++++
+to connect to the database 'development'
+  psql development
+to force psql to prompt for password
+  psql -d development -U [username] -W
+
+----
+http://superuser.com/questions/324616/how-should-i-set-the-path-variable-on-my-mac-so-the-hombrew-installed-tools-are
+++++
+Describes how to force OS to use brew-installed tools rather than default tools
