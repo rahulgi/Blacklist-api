@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20130901020541) do
   enable_extension "plpgsql"
 
   create_table "pages", force: true do |t|
-    t.string "base_url"
+    t.string   "base_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
