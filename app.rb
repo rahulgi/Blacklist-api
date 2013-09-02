@@ -17,9 +17,7 @@ post '/' do
     existing_page.save
   else
     page.count = 1
-    if !page.save
-      msg = "Failed to record blocked page. "
-    end
+    msg = "Failed to record blocked page. " unless page.save
   end
   msg += "For those curious as to why we're tracking this information, rest assured you are not tied to this data in any way. We are just curious as to what pages people are blocking and how often the app is being used."
   msg
