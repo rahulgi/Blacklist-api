@@ -10,11 +10,16 @@ end
 
 post '/' do
   page = Page.new(params[:page])
-  msg = ""
-  if page.save
-    msg += "Succesfully recorded blocked page. "
+  existing_page = Page.find_by(base_url: page.base_url)
+  msg = "Succesfully recorded blocked page. "
+  if existing_page
+    existing_page.count += 1
+    existing_page.save
   else
-    msg += "Failed to record blocked page. "
+    page.count = 1
+    if !page.save
+      msg = "Failed to record blocked page. "
+    end
   end
   msg += "For those curious as to why we're tracking this information, rest assured you are not tied to this data in any way. We are just curious as to what pages people are blocking and how often the app is being used."
   msg
