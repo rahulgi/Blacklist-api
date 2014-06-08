@@ -6,9 +6,11 @@ require './models/page'
 get '/' do
   @pages = Page.all
   erb :index
+  # TODO build a tag cloud with color and size indicating frequency, have a legend for frequency
 end
 
 post '/' do
+  # TODO Use Page.find_or_create
   page = Page.new(params[:page])
   existing_page = Page.find_by(base_url: page.base_url)
   msg = "Succesfully recorded blocked page. "
